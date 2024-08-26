@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 100 900;
+
+  src: url("../fonts/manrope-variable.woff2") format("woff2 supports variations"),
+    url("..//fonts/manrope-variable.woff2") format("woff2-variations");
+}
+
+@layer base {
+  html {
+    font-size: 18px;
+    font-variant-ligatures: none;
+  }
+}
+
+.hero-bg {
+  background-image:  linear-gradient(#858afa 1px, transparent 1px), linear-gradient(to right, #858afa 1px, #fff 1px);
+  background-size: 20px 20px;
+  mask: linear-gradient(to top, #fff, transparent);
+}

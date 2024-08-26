@@ -1,0 +1,71 @@
+{{ define "content" }}
+  <article class="h-entry">
+    <header class="max-w-prose mx-auto relative">
+      <div class="flex flex-wrap items-center gap-x-4 text-xs mb-8">
+        <a href="/" class="inline-flex items-center font-bold text-blurple-600 hover:underline hover:text-blurple-500">{{ partial "svg.html" "arrow-small-left" }} Back</a>
+
+        <time class="text-gray-500 dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z0700" }}">
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+
+        <div class="flex flex-wrap items-center gap-x-4">
+          {{ range .Params.categories }}
+            <a class="relative z-10 rounded-full bg-nightshade-50 text-nightshade-900 px-3 py-1.5 font-medium hover:text-nightshade-600 whitespace-nowrap" href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          {{ end }}
+        </div>
+      </div>
+
+      <h1 class="p-name text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        {{ .Page.Title }}
+      </h1>
+
+      {{ if isset .Params "subtitle" }}
+        <h2 class="text-xl leading-8 text-gray-700 mt-2">
+          {{ .Params.subtitle }}
+        </h2>
+      {{ end }}
+
+      <div class="relative mt-8 flex items-center gap-x-4">
+        {{ range default (slice .Params.author) .Params.authors }}
+          {{ $author := index $.Site.Data.authors . }}
+          <div class="h-10 w-10 rounded-full bg-blurple-gradient relative overflow-hidden">
+            {{ with $author.image }}<img src="{{ . | absURL }}" alt="" class="absolute w-full h-full object-cover">{{ end }}
+          </div>
+
+          <div class="text-sm leading-6">
+            <p class="font-semibold text-gray-900">
+              <span class="absolute inset-0"></span>
+              {{ $author.name }}
+            </p>
+            <p class="text-gray-600">{{ with $author.title }}{{ . }}{{ else }}Guest{{ end }}</p>
+          </div>
+        {{ end }}
+      </div>
+    </header>
+
+    {{ if isset .Params "hero" }}
+      <div class="rounded-lg overflow-hidden max-w-3xl my-8 mx-auto shadow-lg">
+        <img src="{{ .Params.hero }}" alt="" class="w-full object-contain" />
+      </div>
+    {{ else }}
+      {{ $hero := .Page.Resources.GetMatch "hero" }}
+
+      {{ if $hero }}
+        {{ if not $hero.Params.resize }}
+        {{ else }}
+          {{ $hero := $hero.Resize "1200x" }}
+        {{ end }}
+
+        <div class="rounded-lg overflow-hidden max-w-3xl my-8 mx-auto shadow-lg">
+          <img src="{{ $hero.RelPermalink }}" alt="" class="w-full object-contain" />
+        </div>
+      {{ end }}
+    {{ end }}
+
+    <main class="e-content max-w-prose mx-auto prose mt-8">
+      {{ .Content }}
+    </main>
+  </article>
+
+  {{ partial "post/related.html" . }}
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "content" }}
+  <div class="grid grid-cols-4 mt-8">
+    <article class="col-span-3 e-content max-w-prose mx-auto prose">
+      {{ .Content }}
+    </article>
+    <nav class="border-blurple-300 border-l pl-8">
+      <p class="font-bold mb-2">Table of Contents</p>
+      {{ range .Fragments.Headings }}
+        <ul>
+          {{ range .Headings }}
+            <li>
+              <a class="hover:text-blurple-600 hover:font-bold" href="#{{ .ID }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </nav>
+  </div>
+{{ end }}

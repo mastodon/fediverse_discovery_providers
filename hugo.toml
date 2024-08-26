@@ -1,0 +1,4 @@
+baseURL = 'https://mastodon.github.io/fediverse_discovery_providers/'
+languageCode = 'en-us'
+title = 'Fediverse Discovery Providers'
+disableKinds = ['rss', 'taxonomy', 'term']
