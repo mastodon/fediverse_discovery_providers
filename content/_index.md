@@ -45,8 +45,8 @@ the shared protocol, ActivityPub [^1].
 Our reference implementation will respect this setting and only
 ingest content from creators who opted in to discovery in the
 first place. Instances sending content to discovery providers
-should as well make sure to only send such content to their
-providers in the first place.
+should make sure to only send such content in the first place
+as well.
 
 All other information a discovery provider gathers should be
 anonymous. This is especially true and important for statistics
@@ -85,7 +85,7 @@ As part of this project we will be working on two separate
 specifications that build on each other:
 
 1. A generic way to add "providers" to a Fediverse server instance.
-   These "providers" might server other purposes than just search
+   These "providers" might serve other purposes than just search
    and discovery[^2], so we want to make sure server admins can
    easily add providers and choose which capabilities they would
    like to use.
