@@ -1,6 +1,6 @@
 ## Summary 
 
-This projects explores the possibilities for better search and
+This project explores the possibilities for better search and
 discovery on the Fediverse in the form of an optional, pluggable
 service. This service should be decentralized, independent of any
 one specific Fediverse service and respect user choice and privacy.
@@ -16,21 +16,25 @@ follow a user on the photo sharing service "Pixelfed" and vice-versa.
 
 Today, each application (and server/instance) that participates
 in the Fediverse is largely independent when it comes to discovery.
-A limited kind of user search is possible via the WebFinger
-protocol, but content, trends and recommendations are not easily
-shared across the network.
+A basic form of user discovery is possible via the WebFinger
+protocol, but a real user search, discovery of content, trends and
+recommendations are not easily possible across the network.
+
+More often than not, the search and discovery experience is limited
+to content from the instance a user is on. This poses a problem,
+especially on small instances.
 
 ## Project Goals
 
-We will build a reference discovery provider and protocol
+We will build a reference discovery provider and protocols
 (and an example consumer implementation, inside of Mastodon) to
 enable users to discover content across the rich diversity of the
 Fediverse.
 
-The implementations and protocol will respect user privacy. Discovery
-providers should be “pluggable” - servers should be able to choose
-from one or more, in line with the decentralised and federated
-nature of the network.
+The protocols and implementations will respect user privacy.
+Discovery providers should be “pluggable” - servers should be able
+to choose none, one or even several of them, in line with the
+decentralised and federated nature of the network.
 
 ## Privacy Concerns
 
@@ -51,8 +55,7 @@ as well.
 All other information a discovery provider gathers should be
 anonymous. This is especially true and important for statistics
 used to compute trends. Instances should only send data about
-likes and boosts that is anonymized. A discovery provider should
-never be able to reconstruct who liked or boosted what.
+likes and boosts that is anonymized.
 
 In addition to these measures we are open to feedback about how
 to further ensure privacy for those that want or even need it.
@@ -68,7 +71,7 @@ implementer community.
 
 If we have not made it clear enough before: Fediverse Discovery
 Providers are not a project just for Mastodon. We would like to
-make them usable *and* useful to as much Fediverse services as
+make them usable *and* useful to as many Fediverse services as
 possible. For this we require feedback and engagement from fellow
 implementers.
 
@@ -77,19 +80,22 @@ we need to meet certain deadlines. This means we might not always
 be able to incorporate all the feedback we get into the very first
 draft of everything we publish. But rest assured that we are
 committed to continue working on this even after this first
-project has ended, so we will be able to make adjustmens later on.
+project has ended, so we will be able to make adjustments later on.
+
+We welcome participation on the related Github projects we will
+publish soon. We will update this page accordingly.
 
 ## Specifications
 
-As part of this project we will be working on two separate
-specifications that build on each other:
+As part of this project we will be working on specifications in
+two different, but related areas:
 
 1. A generic way to add "providers" to a Fediverse server instance.
    These "providers" might serve other purposes than just search
    and discovery[^2], so we want to make sure server admins can
    easily add providers and choose which capabilities they would
    like to use.
-2. The server-to-server protocol between an instance and a
+2. The server-to-server protocols between an instance and a
    discovery provider. This will specify how an instance will
    "feed" content to a discovery provider to index. And how a
    discovery provider can be queried to actually search and
