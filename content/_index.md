@@ -14,6 +14,8 @@ software that can interoperate by using a shared protocol, ActivityPub.
 A user on a server running the microblogging service "Pleroma" can
 follow a user on the photo sharing service "Pixelfed" and vice-versa.
 
+![A pleroma instance, a peertube instance, a pixelfed instance and a lemmy instance all federating via the ActivityPub protocol](images/instances_federating.svg)
+
 Today, each application (and server/instance) that participates
 in the Fediverse is largely independent when it comes to discovery.
 A basic form of user discovery is possible via the WebFinger
@@ -23,6 +25,8 @@ recommendations are not easily possible across the network.
 More often than not, the search and discovery experience is limited
 to content from the instance a user is on. This poses a problem,
 especially on small instances.
+
+![A pleroma instance, a peertube instance, a pixelfed instance and a lemmy instance performing a local search indepent of each other](images/instances_searching.svg)
 
 ## Project Goals
 
@@ -35,6 +39,8 @@ The protocols and implementations will respect user privacy.
 Discovery providers should be “pluggable” - servers should be able
 to choose none, one or even several of them, in line with the
 decentralised and federated nature of the network.
+
+![A pleroma instance, a peertube instance, a pixelfed instance and a lemmy instance each using either none, one or two search providers](images/instances_using_search_providers.svg)
 
 ## Privacy Concerns
 
