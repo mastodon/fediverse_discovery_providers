@@ -49,8 +49,9 @@ But even with publicly shared content many creators are not
 comfortable with it being indexed for search purposes.
 
 Fediverse platforms like Mastodon that offer search have thus
-made it opt-in and proposed a way to publish this information using
-the shared protocol, ActivityPub [^1].
+made it opt-in and
+[proposed a way to publish this information](https://codeberg.org/fediverse/fep/src/branch/main/fep/5feb/fep-5feb.md)
+using the shared protocol, ActivityPub.
 
 Our reference implementation will respect this setting and only
 ingest content from creators who opted in to discovery in the
@@ -97,10 +98,11 @@ As part of this project we will be working on specifications in
 two different, but related areas:
 
 1. A generic way to add "providers" to a Fediverse server instance.
-   These "providers" might serve other purposes than just search
-   and discovery[^2], so we want to make sure server admins can
-   easily add providers and choose which capabilities they would
-   like to use.
+   These "providers" might serve
+   [other purposes](https://renchap.com/blog/post/evolving_mastodon_trust_and_safety/)
+   than just search and discovery, so we want to make sure server
+   admins can easily add providers and choose which capabilities
+   they would like to use.
 2. The server-to-server protocols between an instance and a
    discovery provider. This will specify how an instance will
    "feed" content to a discovery provider to index. And how a
@@ -167,5 +169,3 @@ then add whichever provider they like and even more than one
 provider at the same time. Two different instances could use
 completely different discovery providers.
 
-[^1]: https://codeberg.org/fediverse/fep/src/branch/main/fep/5feb/fep-5feb.md
-[^2]: https://renchap.com/blog/post/evolving_mastodon_trust_and_safety/
