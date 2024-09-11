@@ -1,9 +1,6 @@
 {{ define "content" }}
-  <div class="grid grid-cols-4 mt-8">
-    <article class="col-span-3 e-content max-w-prose mx-auto prose">
-      {{ .Content }}
-    </article>
-    <nav class="border-blurple-300 border-l pl-8">
+  <div class="sm:grid sm:grid-cols-4 mt-8">
+    <nav class="col-start-4 border-blurple-300 border-l pl-8 mb-8">
       <p class="font-bold mb-2">Table of Contents</p>
       {{ range .Fragments.Headings }}
         <ul>
@@ -15,5 +12,8 @@
         </ul>
       {{ end }}
     </nav>
+    <article class="row-start-1 col-start-1 col-span-3 e-content max-w-prose mx-auto prose">
+      {{ .Content }}
+    </article>
   </div>
 {{ end }}
