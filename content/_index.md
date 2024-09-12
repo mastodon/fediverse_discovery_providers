@@ -1,3 +1,9 @@
++++
+description = 'A project exploring better search and discovery on the Fediverse as an optional, decentralized and pluggable service.'
+[params]
+  images = ['fediscovery.png']
++++
+
 ## Summary 
 
 This project explores the possibilities for better search and
