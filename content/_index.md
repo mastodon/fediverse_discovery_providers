@@ -121,18 +121,22 @@ reference implementation of *a* discovery provider.
 
 {{< partner_logos >}}
 
-"Fediverse Discovery Providers" is a project funded by NGI Search
-and implemented by Mastodon gGmbh.
+"Fediverse Discovery Providers" is a project funded by
+[NGI Search](https://www.ngisearch.eu/)
+and implemented by
+[Mastodon gGmbH](https://joinmastodon.org).
 
 ### NGI Search
 
-NGI Search is a project that funds development of innovative,
+[NGI Search](https://www.ngisearch.eu/)
+is a project that funds development of innovative,
 open and privacy-respecting web search ideas as part of the
 EU's Next Generation Internet initiative.
 
 ### Mastodon gGmbH
 
-Mastodon gGmbH is a non-profit from Germany that develops the
+[Mastodon gGmbH](https://joinmastodon.org)
+is a non-profit from Germany that develops the
 Mastodon software. Mastodon is the leading federated
 microblogging platform.
 
