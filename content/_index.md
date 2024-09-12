@@ -159,7 +159,7 @@ honor these settings and only index user data and content from
 users who have opted-into that.
 
 **Does a search and discovery provider not lead to centralization
-and thus go against the federated nature of ActivityPub/thei
+and thus go against the federated nature of ActivityPub/the
 Fediverse?**
 
 Absolutely not! Our proposal has federation in mind from the get-go.
