@@ -179,3 +179,20 @@ then add whichever provider they like and even more than one
 provider at the same time. Two different instances could use
 completely different discovery providers.
 
+**How is this related to relays?**
+
+Relays can be used to get a more complete view of what is going on in
+the larger Fediverse. As such there are some similarities to this
+proposal.
+
+From an instance operator's point of view the biggest difference is that
+using a relay comes with a higher cost. The instance needs to ingest and
+index everything the relay sends which takes up processing power and
+storage.  A discovery provider will do that work for one or more
+instances.
+
+Implementation-wise we expect to see some similarities with how relays
+work, at least for real-time data. But discovery providers should be
+able to index historic data as well. So ingesting real-time data from
+instances is only part of the story. Querying instances for historic
+data is not currently something that relays do.
