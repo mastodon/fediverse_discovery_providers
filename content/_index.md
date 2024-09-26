@@ -95,8 +95,8 @@ draft of everything we publish. But rest assured that we are
 committed to continue working on this even after this first
 project has ended, so we will be able to make adjustments later on.
 
-We welcome participation on the related Github projects we will
-publish soon. We will update this page accordingly.
+We welcome participation on the
+[specification Github project](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications).
 
 ## Specifications
 
@@ -114,6 +114,9 @@ two different, but related areas:
    "feed" content to a discovery provider to index. And how a
    discovery provider can be queried to actually search and
    discover content.
+
+This work takes place in
+[this Github project](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications).
 
 ## Reference Implementation
 
