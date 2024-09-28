@@ -1,0 +1,18 @@
+{
+  "creatorIdentifier" : "net.ia.presenter",
+  "net.ia.presenter" : {
+    "appearance" : "dark",
+    "bodyfont" : "Manrope",
+    "footerleading" : "fediscovery.org",
+    "footermiddle" : "#fediscovery",
+    "footertrailing" : "logo",
+    "lightbodytextcolor" : "#adadad",
+    "lighttitletextcolor" : "#fffeff",
+    "logo" : "\/assets\/NGISearch_logo_tag_icon.svg",
+    "template" : "san francisco",
+    "titlefont" : "Manrope"
+  },
+  "transient" : false,
+  "type" : "net.daringfireball.markdown",
+  "version" : 2
+}
