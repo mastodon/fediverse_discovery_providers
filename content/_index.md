@@ -11,6 +11,14 @@ discovery on the Fediverse in the form of an optional, pluggable
 service. This service should be decentralized, independent of any
 one specific Fediverse service and respect user choice and privacy.
 
+## Fediscovery @ FOSDEM 2025
+
+We were very grateful to be able to present the Fediscovery project at
+[FOSDEM 2025](http://fosdem.org). The talk was recorded and you can
+download both the slides and the recorded video below:
+
+{{< fosdem_downloads >}}
+
 ## Motivation
 
 The Fediverse is a decentralized network of different servers,
@@ -59,16 +67,22 @@ made it opt-in and
 [proposed a way to publish this information](https://codeberg.org/fediverse/fep/src/branch/main/fep/5feb/fep-5feb.md)
 using the shared protocol, ActivityPub.
 
-Our reference implementation will respect this setting and only
+Search providers will respect this setting and only
 ingest content from creators who opted in to discovery in the
 first place. Instances sending content to discovery providers
-should make sure to only send such content in the first place
+will need to make sure to only send such content in the first place
 as well.
 
-All other information a discovery provider gathers should be
+In addition to that providers will only index content that is clearly
+marked as "public". Requests to fetch content will be signed by the
+provider so that servers or even individual users can block these
+requests on servers that validate this signature.
+
+All other information a discovery provider gathers will be
 anonymous. This is especially true and important for statistics
-used to compute trends. Instances should only send data about
+used to compute trends. Instances will only send data about
 likes and boosts that is anonymized.
+
 
 In addition to these measures we are open to feedback about how
 to further ensure privacy for those that want or even need it.
@@ -100,7 +114,7 @@ We welcome participation on the
 
 ## Specifications
 
-As part of this project we will be working on specifications in
+As part of this project we are working on specifications in
 two different, but related areas:
 
 1. A generic way to add "providers" to a Fediverse server instance.
@@ -111,8 +125,8 @@ two different, but related areas:
    they would like to use.
 2. The server-to-server protocols between an instance and a
    discovery provider. This will specify how an instance will
-   "feed" content to a discovery provider to index. And how a
-   discovery provider can be queried to actually search and
+   notify a discovery provider of new or changes content, so it can be
+   indexed. And how a discovery provider can be queried to actually search and
    discover content.
 
 This work takes place in
@@ -123,8 +137,14 @@ This work takes place in
 Everyone should be able to implement the specifications above
 with whatever technology they prefer. But to make a
 proof-of-concept and provide everyone interested in creating
-their own providers with a starting point, we will develop a
-reference implementation of *a* discovery provider.
+their own providers with a starting point, we are developing a
+reference implementation of *a* discovery provider using Ruby on Rails.
+
+While work on the reference implementation is still ongoing we have
+already extracted some plugins to ease provider development and a sample
+implementation for debugging purposes.
+
+This can be found in our [fasp_ruby Github repository](https://github.com/mastodon/fasp_ruby).
 
 ## Project Partners
 
@@ -160,21 +180,31 @@ providers can work for all services based on ActivityPub.
 
 Depending what service you use, privacy is handled differently.
 But most services will offer you different levels of privacy when
-you post something. Fediverse Discovery Providers should only
+you post something. Fediverse Discovery Providers will only
 ever index content clearly marked as "public". In addition, some
 services, like Mastodon, allow you to opt-in to search and
-discovery explicitly. Again, Fediverse Discovery Providers should
+discovery explicitly. Again, Fediverse Discovery Providers will
 honor these settings and only index user data and content from
 users who have opted-into that.
+
+This means that providers will miss out on a lot of content that is
+publicly available on the web and that an old-fashioned web crawler
+could easily index. But we strongly believe it is important to respect
+user's choices.
 
 **Does a search and discovery provider not lead to centralization
 and thus go against the federated nature of ActivityPub/the
 Fediverse?**
 
-Absolutely not! Our proposal has federation in mind from the get-go.
-We want to specify how a discovery provider works and interfaces
-with a Fediverse server instance. We hope to inspire several
-competing implementations of the specification.
+Search providers will be more useful than search on a single server once
+more than one server uses it. So yes, there is a centralizing force at
+play. Also, search and discovery usually benefit from _some_
+centralization.
+
+But in practice we are not worried about this. We have intentionally
+decided to not just provide an implementation, but rather an open
+specification that everyone can implement. We hope to inspire several
+competing implementations of the specifications.
 
 Also, we expect several independent installations, both public
 and private, of such providers. Fediverse server instances can
