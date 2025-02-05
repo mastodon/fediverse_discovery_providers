@@ -14,7 +14,7 @@ one specific Fediverse service and respect user choice and privacy.
 ## Fediscovery @ FOSDEM 2025
 
 We were very grateful to be able to present the Fediscovery project at
-[FOSDEM 2025](http://fosdem.org). The talk was recorded and you can
+[FOSDEM 2025](https://fosdem.org). The talk was recorded and you can
 download both the slides and the recorded video below:
 
 {{< fosdem_downloads >}}
