@@ -136,18 +136,19 @@ This work takes place in
 
 It currently includes the following specifications:
 
-* ["General server and provider interaction"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/general/v0.1)
-  defines server registration, API authentication and rules for
-  individiual capabilities defined by the other specifications.
-* ["debug"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/debug/v0.1/debug_provider.md)
+* [`general`](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/general/v0.1)
+  defines general server and provider interaction including
+  registration, API authentication and rules for individiual
+  capabilities defined by the other specifications.
+* [`debug`](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/debug/v0.1/debug_provider.md)
   is a simple capability to test server and provider interactions.
-* ["data\_sharing"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/discovery/data_sharing/v0.1/data_sharing.md)
+* [`data_sharing`](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/discovery/data_sharing/v0.1/data_sharing.md)
   forms the basis of how providers can learn of fediverse accounts and
   public content as outlined above.
-* ["trends"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/discovery/trends/v0.1/trends.md)
+* [`trends`](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/discovery/trends/v0.1/trends.md)
   defines APIs for servers to query a provider for trending hashtags,
   links and content.
-* ["account\_search"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/discovery/account_search/v0.1/account_search.md)
+* [`account_search`](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/discovery/account_search/v0.1/account_search.md)
   defines an endpoint for a server to query a provider for accounts that
   are discoverable and that the provider knows about.
 
