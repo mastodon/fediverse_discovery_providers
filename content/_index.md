@@ -44,13 +44,13 @@ especially on small instances.
 
 ## Project Goals
 
-We will build a reference discovery provider and protocols
+We are building a reference discovery provider and protocols
 (and an example consumer implementation, inside of Mastodon) to
 enable users to discover content across the rich diversity of the
 Fediverse.
 
 The protocols and implementations will respect user privacy.
-Discovery providers should be “pluggable” - servers should be able
+Discovery providers are “pluggable” - servers are able
 to choose none, one or even several of them, in line with the
 decentralised and federated nature of the network.
 
@@ -69,7 +69,7 @@ using the shared protocol, ActivityPub.
 
 Search providers will respect this setting and only
 ingest content from creators who opted in to discovery in the
-first place. Instances sending content to discovery providers
+first place. Instances sending content URIs to discovery providers
 will need to make sure to only send such content in the first place
 as well.
 
@@ -78,11 +78,13 @@ marked as "public". Requests to fetch content will be signed by the
 provider so that servers or even individual users can block these
 requests on servers that validate this signature.
 
-All other information a discovery provider gathers will be
-anonymous. This is especially true and important for statistics
-used to compute trends. Instances will only send data about
-likes and boosts that is anonymized.
+Fediverse servers only ever share actor or content URIs (i.e.
+ActivityPub IDs) with providers. Providers will need to fetch the
+underlying objects themselves.
 
+Fediverse servers will not share individiual user actions with
+providers. If providers want to take shares, likes etc. into account
+they need to work with publicly available data.
 
 In addition to these measures we are open to feedback about how
 to further ensure privacy for those that want or even need it.
@@ -132,6 +134,23 @@ two different, but related areas:
 This work takes place in
 [this Github project](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications).
 
+It currently includes the following specifications:
+
+* ["General server and provider interaction"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/general/v0.1)
+  defines server registration, API authentication and rules for
+  individiual capabilities defined by the other specifications.
+* ["debug"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/debug/v0.1/debug_provider.md)
+  is a simple capability to test server and provider interactions.
+* ["data\_sharing"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/discovery/data_sharing/v0.1/data_sharing.md)
+  forms the basis of how providers can learn of fediverse accounts and
+  public content as outlined above.
+* ["trends"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/blob/main/discovery/trends/v0.1/trends.md)
+  defines APIs for servers to query a provider for trending hashtags,
+  links and content.
+* ["account\_search"](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/discovery/account_search/v0.1/account_search.md)
+  defines an endpoint for a server to query a provider for accounts that
+  are discoverable and that the provider knows about.
+
 ## Reference Implementation
 
 Everyone should be able to implement the specifications above
@@ -140,11 +159,13 @@ proof-of-concept and provide everyone interested in creating
 their own providers with a starting point, we are developing a
 reference implementation of *a* discovery provider using Ruby on Rails.
 
-While work on the reference implementation is still ongoing we have
-already extracted some plugins to ease provider development and a sample
-implementation for debugging purposes.
+As part of this work, we have extracted some plugins to ease provider
+development and a sample implementation for debugging purposes.
 
 This can be found in our [fasp_ruby Github repository](https://github.com/mastodon/fasp_ruby).
+
+The reference provider itself is called "fediscoverer" and can be found
+in our [fediscoverer Github repository](https://github.com/mastodon/fediscoverer).
 
 ## Project Partners
 
