@@ -151,6 +151,9 @@ It currently includes the following specifications:
 * [`account_search`](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/discovery/account_search/v0.1/account_search.md)
   defines an endpoint for a server to query a provider for accounts that
   are discoverable and that the provider knows about.
+* [`follow_recommendation`](https://github.com/mastodon/fediverse_auxiliary_service_provider_specifications/tree/main/discovery/follow_recommendation/v0.1/follow_recommendation.md)
+  defines an endpoint for a server to query a provider for accounts
+  that could be interesting for a specific user to follow.
 
 ## Reference Implementation
 
